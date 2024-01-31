@@ -1,5 +1,5 @@
 import { Router } from "@vaadin/router";
-import "./views/components/home-page.ts";
+import "@/views/pages/";
 
 const router = new Router(document.querySelector("#outlet"));
 router.setRoutes([
