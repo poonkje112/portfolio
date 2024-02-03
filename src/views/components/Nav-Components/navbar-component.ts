@@ -7,9 +7,10 @@ export class NavbarComponent extends LitElement {
         css`
             section {
                 width: 100%;
-                height: 3em;
+                height: var(--navbar-height);
                 top: 0;
-                background-color: var(--background-color);
+                background-color: var(--navbar-bg-color);
+                align-items: center;
             }
 
             ul {
@@ -17,8 +18,8 @@ export class NavbarComponent extends LitElement {
                 width: 100%;
                 height: 100%;
                 z-index: 100;
-                top: 3em;
-                background-color: var(--background-color);
+                top: var(--navbar-height);
+                background-color: var(--navbar-bg-color);
             }
 
             ul {
@@ -34,6 +35,7 @@ export class NavbarComponent extends LitElement {
 
             h1 {
                 text-align: left; /* Center the text within h1 */
+                color: var(--text-color);
             }
 
             /* Center the theme switcher */
@@ -71,7 +73,7 @@ export class NavbarComponent extends LitElement {
             <nav>
                 <section class="head">
                     <h1>Aaron Knoop</h1>
-                    <icon-component icon="${this.icon}" @click="${this.onHamburgerMenuClick}"></icon-component>
+                    <icon-component icon="${this.icon}" color="var(--text-color);" @click="${this.onHamburgerMenuClick}"></icon-component>
                 </section>
                 <ul style="display: ${this.icon === "close" ? "block" : "none"};">
                     <li><navbar-button label="Test1" href="Lorem"></navbar-button></li>
