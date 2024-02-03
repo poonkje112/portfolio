@@ -1,5 +1,4 @@
 import { Router } from "@vaadin/router";
-import { BrowseEvent } from "./events";
 import "@/views/pages/";
 
 const router = new Router(document.querySelector("#outlet"));
