@@ -6,9 +6,16 @@ import { customElement, property } from 'lit/decorators.js'
 export class NavbarButton extends LitElement {
     static styles = [
         css`
-            button {
-                width: 100%;
-            }
+
+        button {
+            width: 100%;
+            height: 100%;
+            background-color: var(--navbar-bg-color);
+            color: var(--text-color);
+            border: none;
+            cursor: pointer;
+            border-bottom: 1px solid var(--text-color);
+        }
         `
     ];
 
