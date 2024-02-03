@@ -1,3 +1,4 @@
+import { BrowseEvent } from '@/events';
 import { LitElement, html, css } from 'lit';
 import { customElement, property } from 'lit/decorators.js'
 
@@ -5,6 +6,9 @@ import { customElement, property } from 'lit/decorators.js'
 export class NavbarButton extends LitElement {
     static styles = [
         css`
+            button {
+                width: 100%;
+            }
         `
     ];
 
@@ -12,11 +16,17 @@ export class NavbarButton extends LitElement {
     href = '#';
 
     @property({ type: String })
-    label = '';
+    label = 'Sample';
+
+    handleClick() {
+        this.dispatchEvent(new BrowseEvent(this.href));
+    }
 
     render() {
         return html`
-            <a href="${this.href}" aria-label="${this.label}">${this.label}</a>
+        <button @click="${this.handleClick}" aria-label="${this.label}">
+            <p>${this.label}</p>
+        </button>
         `;
     }
 }

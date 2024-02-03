@@ -1,7 +1,7 @@
-import { NavbarComponent } from "./navbar-component";
-import { ThemeSwitcher } from "./theme-switcher";
+import * as UXComponents from './UX-Components/index';
+import * as NavbarComponents from './Nav-Components/index';
 
 export {
-    NavbarComponent,
-    ThemeSwitcher
+    UXComponents,
+    NavbarComponents
 }
