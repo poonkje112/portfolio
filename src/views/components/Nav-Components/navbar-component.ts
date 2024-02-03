@@ -23,6 +23,7 @@ export class NavbarComponent extends LitElement {
             }
 
             ul {
+                display: var(--navbar-display);
                 list-style: none;
                 padding: 0;
                 margin: 0;
@@ -61,12 +62,23 @@ export class NavbarComponent extends LitElement {
         `,
     ];
 
-    onHamburgerMenuClick() {
-        this.icon = this.icon === 'menu' ? 'close' : 'menu';
-    }
 
     @property({ type: String })
     icon = 'menu';
+
+    @property({ type: String })
+    navbarDisplay = 'none';
+
+    constructor() {
+        super();
+        this.style.setProperty("--navbar-display", this.navbarDisplay);
+    }
+
+    onHamburgerMenuClick() {
+        this.icon = this.icon === 'menu' ? 'close' : 'menu';
+        this.navbarDisplay = this.navbarDisplay == 'none' ? 'block' : 'none'
+        this.style.setProperty("--navbar-display", this.navbarDisplay);
+    }
 
     render() {
         return html`
@@ -75,7 +87,7 @@ export class NavbarComponent extends LitElement {
                     <h1>Aaron Knoop</h1>
                     <icon-component icon="${this.icon}" color="var(--text-color);" @click="${this.onHamburgerMenuClick}"></icon-component>
                 </section>
-                <ul style="display: ${this.icon === "close" ? "block" : "none"};">
+                <ul>
                     <li><navbar-button label="Home" href="Lorem"></navbar-button></li>
                     <li><navbar-button label="About me" href="Lorem"></navbar-button></li>
                     <li><navbar-button label="Contact" href="Lorem"></navbar-button></li>
