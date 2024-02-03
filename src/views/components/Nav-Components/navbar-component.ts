@@ -76,9 +76,9 @@ export class NavbarComponent extends LitElement {
                     <icon-component icon="${this.icon}" color="var(--text-color);" @click="${this.onHamburgerMenuClick}"></icon-component>
                 </section>
                 <ul style="display: ${this.icon === "close" ? "block" : "none"};">
-                    <li><navbar-button label="Test1" href="Lorem"></navbar-button></li>
-                    <li><navbar-button label="Test2" href="Lorem"></navbar-button></li>
-                    <li><navbar-button label="Test3" href="Lorem"></navbar-button></li>
+                    <li><navbar-button label="Home" href="Lorem"></navbar-button></li>
+                    <li><navbar-button label="About me" href="Lorem"></navbar-button></li>
+                    <li><navbar-button label="Contact" href="Lorem"></navbar-button></li>
                     <li><theme-switcher></theme-switcher></li>
                 </ul>
             </nav>
