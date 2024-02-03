@@ -36,13 +36,13 @@ export class ThemeSwitcher extends LitElement {
                 left: 0;
                 right: 0;
                 bottom: 0;
-                background-color: var(--background-color);
+                background-color: var(--theme-slider-bg);
                 transition: 0.4s;
                 border-radius: 15px;
             }
 
             input:checked + .slider {
-                background-color: #2196F3;
+                background-color: var(--theme-slider-bg);
             }
 
             .slider:before {
@@ -52,7 +52,7 @@ export class ThemeSwitcher extends LitElement {
                 width: 24px;
                 left: 4px;
                 bottom: 16%;
-                background-color: var(--text-color);
+                background-color: var(--theme-knob);
                 transition: 0.4s;
                 border-radius: 50%;
             }
