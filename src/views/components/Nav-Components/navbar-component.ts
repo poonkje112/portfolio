@@ -39,6 +39,7 @@ export class NavbarComponent extends LitElement {
             h1 {
                 text-align: left; /* Center the text within h1 */
                 color: var(--text-color);
+                font: normal 35px/1.4 var(--default-font);
             }
 
             /* Center the theme switcher */
@@ -82,7 +83,6 @@ export class NavbarComponent extends LitElement {
 
                 theme-switcher {
                     padding-top: 0;
-                    
                 }
             }
         `,

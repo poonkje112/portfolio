@@ -7,6 +7,10 @@ export class NavbarButton extends LitElement {
     static styles = [
         css`
 
+        p {
+            font: normal 15px/1.4 var(--default-font);
+        }
+
         button {
             width: 100%;
             height: 100%;
