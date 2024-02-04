@@ -59,13 +59,13 @@ export class ThemeSwitcher extends LitElement {
             }
 
             input:checked + .slider:before {
-                transform: translateX(34px);
+                transform: translateX(32px);
             }
 
             @media (min-width: 1000px) {
                 input:checked + .slider:before {
-                transform: translateX(22px);
-            }
+                    transform: translateX(1.5vw);
+                }
             }
         `
     ];
