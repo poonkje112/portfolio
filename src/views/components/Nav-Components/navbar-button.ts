@@ -11,7 +11,6 @@ export class NavbarButton extends LitElement {
             width: 100%;
             height: 100%;
             background-color: var(--navbar-bg-color);
-            color: var(--text-color);
             border: none;
             cursor: pointer;
             border-bottom: 1px solid var(--text-color);
@@ -20,7 +19,6 @@ export class NavbarButton extends LitElement {
         @media (min-width: 1000px) {
             button {
                 background-color: var(--navbar-bg-color);
-                color: var(--text-color);
                 border: none;
                 cursor: pointer;
                 min-height: 10%;
@@ -59,6 +57,9 @@ export class NavbarButton extends LitElement {
     @property({ type: String })
     label = '';
 
+    @property({ type: String })
+    active = "false";
+
     handleClick() {
         this.dispatchEvent(new BrowseEvent(this.href));
     }
@@ -66,7 +67,7 @@ export class NavbarButton extends LitElement {
     render() {
         return html`
         <button @click="${this.handleClick}" aria-label="${this.label}">
-            <p>${this.label}</p>
+            <p style="color: ${this.active === "true" ? "var(--active-color)" : "var(--text-color)"};">${this.label}</p>
         </button>
         `;
     }
