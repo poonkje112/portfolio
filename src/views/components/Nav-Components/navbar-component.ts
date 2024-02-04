@@ -101,6 +101,18 @@ export class NavbarComponent extends LitElement {
         this.style.setProperty("--navbar-display", this.navbarDisplay);
     }
 
+    onButtonClick(e: Event) {
+        // Set all buttons to inactive
+        const buttons = this.shadowRoot?.querySelectorAll('navbar-button');
+        buttons?.forEach(button => {
+            button.setAttribute('active', 'false');
+        });
+
+        // Set the active button to true
+        const btn = e.target as Element;
+        btn.setAttribute('active', 'true');
+    }
+
     render() {
         return html`
             <nav>
@@ -111,9 +123,9 @@ export class NavbarComponent extends LitElement {
                             <icon-component icon="${this.icon}" color="var(--text-color);" @click="${this.onHamburgerMenuClick}"></icon-component>
                         </section>
                         <ul>
-                            <li><navbar-button label="Home" href="Lorem"></navbar-button></li>
-                            <li><navbar-button label="About me" href="Lorem"></navbar-button></li>
-                            <li><navbar-button label="Contact" href="Lorem"></navbar-button></li>
+                            <li><navbar-button label="Home" href="/" @click="${((e: Event) => this.onButtonClick(e))}"></navbar-button></li>
+                            <li><navbar-button label="About me" href="/about" @click="${((e: Event) => this.onButtonClick(e))}"></navbar-button></li>
+                            <li><navbar-button label="Contact" href="/contact" @click="${((e: Event) => this.onButtonClick(e))}"></navbar-button></li>
                             <li><theme-switcher></theme-switcher></li>
                         </ul>
                     </div>
