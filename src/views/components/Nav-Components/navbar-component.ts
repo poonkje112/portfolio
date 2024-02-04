@@ -79,6 +79,11 @@ export class NavbarComponent extends LitElement {
                     gap: 10px;
                     top: 0;
                 }
+
+                theme-switcher {
+                    padding-top: 0;
+                    
+                }
             }
         `,
     ];
