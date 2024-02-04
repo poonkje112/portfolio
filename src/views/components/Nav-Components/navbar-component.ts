@@ -5,11 +5,13 @@ import { customElement, property } from 'lit/decorators.js';
 export class NavbarComponent extends LitElement {
     static styles = [
         css`
+        nav {
+            background-color: var(--navbar-bg-color);
+        }
             section {
                 width: 100%;
                 height: var(--navbar-height);
                 top: 0;
-                background-color: var(--navbar-bg-color);
                 align-items: center;
             }
 
@@ -59,6 +61,25 @@ export class NavbarComponent extends LitElement {
                 -ms-user-select: none; /* IE 10 and IE 11 */
                 user-select: none; /* Standard syntax */
             }
+
+            @media (min-width: 1000px) {
+                .head icon-component {
+                    display: none;
+                }
+
+                .navbar-container {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+
+                ul {
+                    display: flex;
+                    position: relative;
+                    gap: 10px;
+                    top: 0;
+                }
+            }
         `,
     ];
 
@@ -83,16 +104,20 @@ export class NavbarComponent extends LitElement {
     render() {
         return html`
             <nav>
-                <section class="head">
-                    <h1>Aaron Knoop</h1>
-                    <icon-component icon="${this.icon}" color="var(--text-color);" @click="${this.onHamburgerMenuClick}"></icon-component>
-                </section>
-                <ul>
-                    <li><navbar-button label="Home" href="Lorem"></navbar-button></li>
-                    <li><navbar-button label="About me" href="Lorem"></navbar-button></li>
-                    <li><navbar-button label="Contact" href="Lorem"></navbar-button></li>
-                    <li><theme-switcher></theme-switcher></li>
-                </ul>
+                <padded-container>
+                    <div class="navbar-container">
+                        <section class="head">
+                            <h1>Aaron Knoop</h1>
+                            <icon-component icon="${this.icon}" color="var(--text-color);" @click="${this.onHamburgerMenuClick}"></icon-component>
+                        </section>
+                        <ul>
+                            <li><navbar-button label="Home" href="Lorem"></navbar-button></li>
+                            <li><navbar-button label="About me" href="Lorem"></navbar-button></li>
+                            <li><navbar-button label="Contact" href="Lorem"></navbar-button></li>
+                            <li><theme-switcher></theme-switcher></li>
+                        </ul>
+                    </div>
+                </padded-container>
             </nav>
         `;
     }

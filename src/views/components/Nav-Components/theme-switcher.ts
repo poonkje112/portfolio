@@ -60,23 +60,24 @@ export class ThemeSwitcher extends LitElement {
             input:checked + .slider:before {
                 transform: translateX(30px);
             }
+
+            @media(min-width: 1000px) {
+                .slider:before {
+                    left: 2px;
+                }
+            }
         `
     ];
 
     constructor() {
         super();
 
-        const theme = localStorage.getItem('theme') || 'light';
-
-        if (theme) {
-            document.documentElement.setAttribute('data-theme', theme);
-        }
+        document.documentElement.setAttribute('data-theme', 'dark'); 
     }
 
     onChange() {
         const theme = document.documentElement.getAttribute('data-theme');
         document.documentElement.setAttribute('data-theme', theme === 'dark' ? 'light' : 'dark');
-        localStorage.setItem('theme', theme === 'dark' ? 'light' : 'dark');
     }
 
     render() {
