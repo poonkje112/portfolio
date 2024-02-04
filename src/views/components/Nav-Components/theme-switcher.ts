@@ -17,7 +17,8 @@ export class ThemeSwitcher extends LitElement {
                 display: flex;
                 align-items: center;
                 cursor: pointer;
-                color: var(--text-color)
+                color: var(--text-color);
+                font: normal 15px/1.4 var(--default-font);
             }
 
             .switch {
