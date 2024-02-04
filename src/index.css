@@ -58,6 +58,8 @@ table {
 	--active-color: #90CAF4;
 
 	--navbar-height: 4rem;
+
+	--default-font: 'Open Sans',Helvetica,Arial,sans-serif;
 }
 
 html[data-theme="light"] {
