@@ -1,5 +1,5 @@
 import { LitElement, html, css } from 'lit';
-import { customElement } from 'lit/decorators.js';
+import { customElement, property } from 'lit/decorators.js';
 
 @customElement('theme-switcher')
 export class ThemeSwitcher extends LitElement {
@@ -58,13 +58,13 @@ export class ThemeSwitcher extends LitElement {
             }
 
             input:checked + .slider:before {
-                transform: translateX(30px);
+                transform: translateX(34px);
             }
 
-            @media(min-width: 1000px) {
-                .slider:before {
-                    left: 2px;
-                }
+            @media (min-width: 1000px) {
+                input:checked + .slider:before {
+                transform: translateX(22px);
+            }
             }
         `
     ];
@@ -75,9 +75,13 @@ export class ThemeSwitcher extends LitElement {
         document.documentElement.setAttribute('data-theme', 'dark'); 
     }
 
+    @property({ type: String })
+    otherTheme = 'Light';
+
     onChange() {
         const theme = document.documentElement.getAttribute('data-theme');
         document.documentElement.setAttribute('data-theme', theme === 'dark' ? 'light' : 'dark');
+        this.otherTheme = theme === 'dark' ? 'Dark' : 'Light';
     }
 
     render() {
@@ -86,7 +90,7 @@ export class ThemeSwitcher extends LitElement {
                 <input type="checkbox" id="theme-switcher" @change="${this.onChange}" />
                 <label for="theme-switcher" class="slider"></label>
             </div>
-            <label for="theme-switcher">Switch theme</label>
+            <label for="theme-switcher">Switch to ${this.otherTheme}</label>
         `;
     }
 }
