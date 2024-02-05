@@ -57,6 +57,9 @@ table {
 	--theme-slider-bg: #2196f3;
 	--active-color: #90CAF4;
 
+	--cat-image: url('@/assets/dark_c4t.jpg');
+	--cat-background-color: #000;
+
 	--navbar-height: 4rem;
 
 	--default-font: 'Open Sans',Helvetica,Arial,sans-serif;
@@ -67,6 +70,9 @@ html[data-theme="light"] {
     --background-color: #ecf0f1;
 	--theme-slider-bg: #ecf0f1;
 	--active-color: #085187;
+
+	--cat-image: url('@/assets/light_c4t.jpg');
+	--cat-background-color: #fff;
 
     --text-color: #000;
 	--theme-knob: #2c3e50;
