@@ -27,14 +27,20 @@ export class CatComponent extends LitElement {
                 align-items: center;
             }
 
+            padded-container {
+                width: 100%;
+            }
+
         @media (min-width: 1000px) {
             section {
                 background-image: var(--cat-image);
+                background-attachment: fixed;
+                background-position: center;
+                background-repeat: no-repeat;
                 background-size: cover;
             }
 
             h1 {
-                padding-left: 10%;
                 text-align: left;
             }
         }
@@ -44,10 +50,12 @@ export class CatComponent extends LitElement {
     render() {
         return html`
         <section>
-            <h1>
-                <div>I build and</div>
-                <div>break applications</div>
-            </h1>
+            <padded-container>
+                <h1>
+                    <div>I build and</div>
+                    <div>break applications</div>
+                </h1>
+            </padded-container>
         </section>
             `;
     }
