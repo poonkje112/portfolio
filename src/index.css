@@ -1,3 +1,36 @@
+:root {
+    --navbar-bg-color: #222f3e;
+    --background-color: #000;
+    --text-color: #ecf0f1;
+    --theme-knob: #ecf0f1;
+	--theme-slider-bg: #2196f3;
+	--active-color: #90CAF4;
+
+	--cat-image: url('@/assets/dark_c4t.jpg');
+
+	--navbar-height: 4rem;
+
+	--default-font: 'Open Sans',Helvetica,Arial,sans-serif;
+	--padding-width: 15vw;
+}
+
+html[data-theme="light"] {
+    --navbar-bg-color: #bdc3c7;
+    --background-color: #fff;
+	--theme-slider-bg: #ecf0f1;
+	--active-color: #085187;
+
+	--cat-image: url('@/assets/light_c4t.jpg');
+
+    --text-color: #000;
+	--theme-knob: #2c3e50;
+}
+
+html {
+	width: 100%;
+	height: 100%;
+}
+
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -49,36 +82,6 @@ table {
 
 /* End reset */
 
-:root {
-    --navbar-bg-color: #222f3e;
-    --background-color: #34495e;
-    --text-color: #ecf0f1;
-    --theme-knob: #ecf0f1;
-	--theme-slider-bg: #2196f3;
-	--active-color: #90CAF4;
-
-	--cat-image: url('@/assets/dark_c4t.jpg');
-	--cat-background-color: #000;
-
-	--navbar-height: 4rem;
-
-	--default-font: 'Open Sans',Helvetica,Arial,sans-serif;
-}
-
-html[data-theme="light"] {
-    --navbar-bg-color: #bdc3c7;
-    --background-color: #ecf0f1;
-	--theme-slider-bg: #ecf0f1;
-	--active-color: #085187;
-
-	--cat-image: url('@/assets/light_c4t.jpg');
-	--cat-background-color: #fff;
-
-    --text-color: #000;
-	--theme-knob: #2c3e50;
-}
-
-html {
-	width: 100%;
-	height: 100%;
+body {
+	background-color: var(--background-color);
 }
