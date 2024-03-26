@@ -125,7 +125,7 @@ export class NavbarComponent extends LitElement {
                     <div class="navbar-container">
                         <section class="head">
                             <h1>Aaron Knoop</h1>
-                            <icon-component icon="${this.icon}" color="var(--text-color);" @click="${this.onHamburgerMenuClick}"></icon-component>
+                            <icon-component icon="${this.icon}" @click="${this.onHamburgerMenuClick}"></icon-component>
                         </section>
                         <ul>
                             <li><navbar-button label="Home" href="/" @click="${((e: Event) => this.onButtonClick(e))}"></navbar-button></li>

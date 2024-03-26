@@ -4,6 +4,7 @@ import "@/views/pages/";
 const router = new Router(document.querySelector("#outlet"));
 router.setRoutes([
   { path: "/", component: "home-page" },
+  { path: "/about", component: "about-me" },
   { path: "(.*)", component: "not-found-page" },
 ]);
 

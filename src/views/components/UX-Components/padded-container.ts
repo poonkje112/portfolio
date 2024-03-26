@@ -15,7 +15,7 @@ export class PaddedContainer extends LitElement {
 
             @media(min-width: 1000px) {
             div {
-                padding: 0 15vw;
+                padding: 0 var(--padding-width);
             }
         }
         `
