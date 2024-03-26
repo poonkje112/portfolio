@@ -10,6 +10,10 @@ export class AboutMe extends LitElement {
 
     static styles = [
         css`
+
+        #container {
+            font-family: var(--default-font);
+        }
         
         section {
             width: 100%;
@@ -131,7 +135,11 @@ export class AboutMe extends LitElement {
                     <div>
                         <h1>About Me</h1>
                         <p>
-                            I am a full-stack developer with a passion for creating software that is both beautiful and functional. I am currently working as a software developer at a small company in the midwest. I have experience with a wide variety of technologies and am always looking to learn more.
+                            I'm a software developer major with a passion for creating and breaking applications. I have experience with a variety of technologies and I'm always looking to learn more. <br />
+                            I tend to focus on the back-end of applications but I also like to create games in my free time.<br />
+                            My ultimate goal is to make the internet a more accessible place for everyone, including the metavese. <br />
+                            I'm always open to new opportunities, so feel free to reach out to me. <br />
+                        </p>
                         </p>
                         <a href="#"><icon-component icon="description"></icon-component><p>Download resume</p></a>
                         <section id="tech-stack">
