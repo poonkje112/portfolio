@@ -11,7 +11,7 @@ export class IconComponent extends LitElement {
 
             .material-symbols-outlined {
                 font-size: 48px;
-                color: black;
+                color: var(--text-color);
                 display: block;
                 margin: 0 auto;
                 
@@ -28,16 +28,13 @@ export class IconComponent extends LitElement {
     icon = '';
 
     @property({ type: String })
-    color = 'black';
-
-    @property({ type: String })
     fontSize = '48px';
 
 
     render() {
         return html`
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-        <span class="material-symbols-outlined" aria-hidden="true" style="color: ${this.color}; font-size: ${this.fontSize};">
+        <span class="material-symbols-outlined" aria-hidden="true" style="font-size: ${this.fontSize};">
             ${this.icon}
         </span>
         `;

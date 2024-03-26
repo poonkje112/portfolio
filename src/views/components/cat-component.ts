@@ -20,7 +20,7 @@ export class CatComponent extends LitElement {
             section {
                 width: 100%;
                 height: calc(100vh - var(--navbar-height));
-                background-color: var(--cat-background-color);
+                background-color: var(--background-color);
 
                 display: flex;
                 justify-content: center;
