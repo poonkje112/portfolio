@@ -14,6 +14,7 @@ export class HomePage extends LitElement {
     render() {
         return html`
         <cat-component></cat-component>
+        <project-component></project-component>
         `;
     }
 }
