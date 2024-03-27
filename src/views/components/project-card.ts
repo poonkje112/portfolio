@@ -44,9 +44,19 @@ export class ProjectCard extends LitElement {
     @property({ type: String })
     slug = '';
 
+    goToProject() {
+        const browseEvent = new CustomEvent('browse', {
+            detail: {
+                target: `/project/${this.slug}`
+            }
+        });
+
+        document.dispatchEvent(browseEvent);
+    }
+
     render() {
         return html`
-        <article>
+        <article @click="${this.goToProject}">
             <img src="${this.coverImage}" alt="${this.title}" />
             <h2>${this.title}</h2>
             <p>${this.description}</p>
