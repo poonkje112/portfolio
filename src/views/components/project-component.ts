@@ -1,5 +1,7 @@
 import { LitElement, html, css } from 'lit';
 import { customElement, property } from 'lit/decorators.js'
+import { ProjectService } from '@/services/ProjectService';
+import { Project } from '@/model/Project';
 
 @customElement('project-component')
 export class ProjectComponent extends LitElement {
@@ -19,13 +21,43 @@ export class ProjectComponent extends LitElement {
             font-size: 2rem;
             color: var(--text-color);
         }
+
+        div {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1em;
+            padding: 1em;
+            justify-content: center;
+        }
         `
     ];
 
+    private projects: Project[] = [];
+
+    public async firstUpdated() {
+        const projectService = new ProjectService();
+        const projects = await projectService.getProjects();
+        this.projects = projects;
+
+        this.requestUpdate();
+    }
+
     render() {
         return html`
+        <padded-container>
         <section>
             <h2>Projects</h2>
-        </section>`;
+            <div>
+                ${this.projects.map(project => html`
+                    <project-card
+                        title="${project.title}"
+                        description="${project.description}"
+                        coverImage="${project.coverImage}"
+                        slug="${project.slug}"
+                    ></project-card>
+                `)}
+            </div>
+        </section>
+        </padded-container>`;
     }
 }
