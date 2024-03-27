@@ -17,7 +17,6 @@ export class AboutMe extends LitElement {
         
         section {
             width: 100%;
-            height: calc(95vh - var(--navbar-height));
 
             color: var(--text-color);
 
@@ -101,7 +100,7 @@ export class AboutMe extends LitElement {
             }
 
             img {
-                height: 75%;
+                height: 45vh;
                 border-radius: 3%;
             }
 

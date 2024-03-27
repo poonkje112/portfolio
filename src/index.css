@@ -85,3 +85,8 @@ table {
 body {
 	background-color: var(--background-color);
 }
+
+main#outlet {
+	position: relative;
+	top: var(--navbar-height);
+}

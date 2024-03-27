@@ -7,84 +7,88 @@ export class NavbarComponent extends LitElement {
         css`
         nav {
             background-color: var(--navbar-bg-color);
+            position: fixed;
+            width: 100%;
+            z-index: 100;
         }
-            section {
-                width: 100%;
-                height: var(--navbar-height);
-                top: 0;
+
+        section {
+            width: 100%;
+            height: var(--navbar-height);
+            top: 0;
+            align-items: center;
+        }
+
+        ul {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: 100;
+            top: var(--navbar-height);
+            background-color: var(--navbar-bg-color);
+        }
+
+        ul {
+            display: var(--navbar-display);
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: 100%; /* Make the list full width */
+        }
+
+        li {
+            width: 100%; /* Make all list items full width */
+        }
+
+        h1 {
+            text-align: left; /* Center the text within h1 */
+            color: var(--text-color);
+            font: normal 35px/1.4 var(--default-font);
+        }
+
+        /* Center the theme switcher */
+        theme-switcher {
+            width: 100%;
+            display: flex;
+            padding-top: 1em;
+            justify-content: right;
+        }
+
+        .head {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .head icon-component {
+            cursor: pointer;
+            -webkit-user-select: none; /* Safari */
+            -ms-user-select: none; /* IE 10 and IE 11 */
+            user-select: none; /* Standard syntax */
+        }
+
+        @media (min-width: 1000px) {
+            .head icon-component {
+                display: none;
+            }
+
+            .navbar-container {
+                display: flex;
+                justify-content: space-between;
                 align-items: center;
             }
 
             ul {
-                position: fixed;
-                width: 100%;
-                height: 100%;
-                z-index: 100;
-                top: var(--navbar-height);
-                background-color: var(--navbar-bg-color);
+                display: flex;
+                position: relative;
+                gap: 10px;
+                top: 0;
             }
 
-            ul {
-                display: var(--navbar-display);
-                list-style: none;
-                padding: 0;
-                margin: 0;
-                width: 100%; /* Make the list full width */
-            }
-
-            li {
-                width: 100%; /* Make all list items full width */
-            }
-
-            h1 {
-                text-align: left; /* Center the text within h1 */
-                color: var(--text-color);
-                font: normal 35px/1.4 var(--default-font);
-            }
-
-            /* Center the theme switcher */
             theme-switcher {
-                width: 100%;
-                display: flex;
-                padding-top: 1em;
-                justify-content: right;
+                padding-top: 0;
             }
-
-            .head {
-                width: 100%;
-                display: flex;
-                justify-content: space-between;
-            }
-
-            .head icon-component {
-                cursor: pointer;
-                -webkit-user-select: none; /* Safari */
-                -ms-user-select: none; /* IE 10 and IE 11 */
-                user-select: none; /* Standard syntax */
-            }
-
-            @media (min-width: 1000px) {
-                .head icon-component {
-                    display: none;
-                }
-
-                .navbar-container {
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                }
-
-                ul {
-                    display: flex;
-                    position: relative;
-                    gap: 10px;
-                    top: 0;
-                }
-
-                theme-switcher {
-                    padding-top: 0;
-                }
-            }
+        }
         `,
     ];
 
