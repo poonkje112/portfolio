@@ -6,8 +6,9 @@ export class ImageService {
         const response = await fetch(`${BASE_URL}/images/project/${projectSlug}`);
         const images = await response.json();
 
+
         return images.map((image: any) => {
-            return new Image(image.id);
+            return new Image(image.id, image.is_cover);
         });
     }
 }
