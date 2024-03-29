@@ -37,7 +37,10 @@ export class ProjectService {
             project.description,
             project.slug,
             tags,
-            members
+            members,
+            project.git,
+            project.live,
+            project.youtube
         );
     }
 }

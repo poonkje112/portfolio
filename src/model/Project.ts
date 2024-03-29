@@ -10,13 +10,19 @@ export class Project {
     public tags: Tag[];
     public members: Member[];
     public coverImage: string;
+    public git: string = '';
+    public live: string = '';
+    public youtube: string = '';
 
-    constructor(title: string, description: string, slug: string, tags: Tag[], members: Member[]) {
+    constructor(title: string, description: string, slug: string, tags: Tag[], members: Member[], git: string, live: string, youtube: string) {
         this.title = title;
         this.description = description;
         this.slug = slug;
         this.tags = tags;
         this.members = members;
         this.coverImage = `${BASE_URL}/images/project/${slug}/cover`;
+        this.git = git;
+        this.live = live;
+        this.youtube = youtube;
     }
 }
