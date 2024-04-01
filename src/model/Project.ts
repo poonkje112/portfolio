@@ -25,4 +25,8 @@ export class Project {
         this.live = live;
         this.youtube = youtube;
     }
+
+    public static empty(): Project {
+        return new Project('', '', '', [], [], '', '', '');
+    }
 }
