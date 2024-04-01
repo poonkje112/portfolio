@@ -2,6 +2,7 @@ import { LitElement, html, css } from 'lit';
 import { customElement } from 'lit/decorators.js'
 import selfPortrait from '@/assets/me.jpg';
 import { TagService } from '@/services/TagService';
+import resume from '@/assets/RESUME-ENG-ATS_SAFE_REDAC.docx.pdf';
 
 @customElement('about-me')
 export class AboutMe extends LitElement {
@@ -111,6 +112,10 @@ export class AboutMe extends LitElement {
         this.requestUpdate(); // Request an update to render the new tech stack
     }
 
+    downloadResume() {
+        window.open(resume, '_blank');
+    }
+
     render() {
         return html`
         <padded-container>
@@ -126,7 +131,7 @@ export class AboutMe extends LitElement {
                             I'm always open to new opportunities, so feel free to reach out to me. <br />
                         </p>
                         </p>
-                        <a href="#"><icon-component icon="description"></icon-component><p>Download resume</p></a>
+                        <a href="#" @click="${this.downloadResume}"><icon-component icon="description"></icon-component><p>Download resume</p></a>
                         <section id="tech-stack">
                             <h2>My Tech Stack</h2>
                             <ul id="stack">
