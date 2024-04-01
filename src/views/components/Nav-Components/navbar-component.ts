@@ -122,6 +122,10 @@ export class NavbarComponent extends LitElement {
         btn.setAttribute('active', 'true');
     }
 
+    openMail() {
+        window.open('mailto:contact@poonkje.com');
+    }
+
     render() {
         return html`
             <nav>
@@ -134,7 +138,7 @@ export class NavbarComponent extends LitElement {
                         <ul>
                             <li><navbar-button label="Home" href="/" @click="${((e: Event) => this.onButtonClick(e))}"></navbar-button></li>
                             <li><navbar-button label="About me" href="/about" @click="${((e: Event) => this.onButtonClick(e))}"></navbar-button></li>
-                            <li><navbar-button label="Contact" href="/contact" @click="${((e: Event) => this.onButtonClick(e))}"></navbar-button></li>
+                            <li><navbar-button label="Contact" href="/" @click="${(() => this.openMail())}"></navbar-button></li>
                             <li><theme-switcher></theme-switcher></li>
                         </ul>
                     </div>
