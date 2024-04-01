@@ -9,7 +9,6 @@ export class ImageGallery extends LitElement {
         css`
         section {
             width: 100%;
-            height: calc(100vh - var(--navbar-height));
             background-color: var(--background-color);
             display: flex;
             flex-direction: column;
