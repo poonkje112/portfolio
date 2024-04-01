@@ -6,6 +6,9 @@ export class TagComponent extends LitElement {
     static styles = [
         css`
         li {
+            font-family: var(--default-font);
+            color: var(--text-color);
+            
             display: inline-block;
             padding: 0.5em;
             background-color: var(--navbar-bg-color);
@@ -20,11 +23,11 @@ export class TagComponent extends LitElement {
     ];
 
     @property({type: String})
-    tag = '';
+    tagName = '';
 
     render() {
         return html`
-        <li>${this.tag}</li>
+        <li>${this.tagName}</li>
         `;
     }
 }

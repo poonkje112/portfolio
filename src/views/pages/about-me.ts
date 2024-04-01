@@ -130,7 +130,7 @@ export class AboutMe extends LitElement {
                         <section id="tech-stack">
                             <h2>My Tech Stack</h2>
                             <ul id="stack">
-                                ${this.techStack.map(tag => html`<tag-component tag="${tag}"></tag-component>`)}
+                                ${this.techStack.map(tag => html`<tag-component tagName="${tag}"></tag-component>`)}
                             </ul>
                         </section>
                     </div>
