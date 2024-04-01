@@ -1,1 +1,1 @@
-export const BASE_URL = 'http://portfolio.ipnk.dev/api';
+export const BASE_URL = 'https://portfolio.ipnk.dev/api';
