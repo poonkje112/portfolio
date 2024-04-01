@@ -29,7 +29,7 @@ export class ProjectService {
         }
 
         if(project.members !== undefined) {
-            members = project.members.map((member: any) => new Member(member.name, member.role));
+            members = project.members.map((member: any) => new Member(member.name, member.portfolio));
         }
 
         return new Project(
