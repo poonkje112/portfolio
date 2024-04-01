@@ -122,7 +122,7 @@ export class AboutMe extends LitElement {
                         <p>
                             I'm a software developer major with a passion for creating and breaking applications. I have experience with a variety of technologies and I'm always looking to learn more. <br />
                             I tend to focus on the back-end of applications but I also like to create games in my free time.<br />
-                            My ultimate goal is to make the internet a more accessible place for everyone, including the metavese. <br />
+                            My ultimate goal is to make the internet a more accessible place for everyone, including the metaverse. <br />
                             I'm always open to new opportunities, so feel free to reach out to me. <br />
                         </p>
                         </p>
