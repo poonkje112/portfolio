@@ -1,1 +1,1 @@
-export const BASE_URL = 'http://localhost:8000/api'; // TODO change this to the actual URL of the API when it has been deployed
+export const BASE_URL = 'http://ipnk.dev/api';
