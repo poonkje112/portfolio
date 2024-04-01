@@ -19,17 +19,25 @@ export class CatComponent extends LitElement {
 
             section {
                 width: 100%;
-                height: calc(100vh - var(--navbar-height));
+                height: 100vh;
                 background-color: var(--background-color);
 
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                flex-direction: column;
+                position: relative;
             }
 
             padded-container {
                 width: 100%;
             }
+
+            focus-button {
+            position: absolute;
+            bottom: 10%;
+            left: calc(50% - 24px);
+        }
 
         @media (min-width: 1000px) {
             section {
@@ -55,6 +63,7 @@ export class CatComponent extends LitElement {
                     <div>I build and</div>
                     <div>break applications</div>
                 </h1>
+                <focus-button></focus-button>
             </padded-container>
         </section>
             `;

@@ -1,5 +1,5 @@
 import { Tag } from "@/model/Tag";
-import { BASE_URL } from ".";
+import { BASE_URL } from "@/constants";
 
 export class TagService {
     private tagUrl = `${BASE_URL}/tags`;

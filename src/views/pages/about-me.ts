@@ -17,7 +17,6 @@ export class AboutMe extends LitElement {
         
         section {
             width: 100%;
-            height: calc(95vh - var(--navbar-height));
 
             color: var(--text-color);
 
@@ -69,18 +68,6 @@ export class AboutMe extends LitElement {
             padding: 0;
         }
 
-        #stack li {
-            display: inline-block;
-            padding: 0.5em;
-            background-color: var(--navbar-bg-color);
-            border-radius: 5px;
-            text-align: center;
-            width: 125px;
-            height: 16px;
-            margin-right: 10px;
-            font-size: .75rem;
-        }
-
         @media (min-width: 1000px) {
             #tech-stack {
                 flex-direction: row;
@@ -101,7 +88,7 @@ export class AboutMe extends LitElement {
             }
 
             img {
-                height: 75%;
+                height: 45vh;
                 border-radius: 3%;
             }
 
@@ -112,8 +99,6 @@ export class AboutMe extends LitElement {
                 flex-direction: column;
                 justify-content: space-between;
             }
-
-
         }
         `
     ];
@@ -145,8 +130,8 @@ export class AboutMe extends LitElement {
                         <section id="tech-stack">
                             <h2>My Tech Stack</h2>
                             <ul id="stack">
-                            ${this.techStack.map(tag => html`<li>${tag}</li>`)}
-                        </ul>
+                                ${this.techStack.map(tag => html`<tag-component tagName="${tag}"></tag-component>`)}
+                            </ul>
                         </section>
                     </div>
                 </div>
