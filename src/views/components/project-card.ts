@@ -59,7 +59,11 @@ export class ProjectCard extends LitElement {
         <article @click="${this.goToProject}">
             <img src="${this.coverImage}" alt="${this.title}" />
             <h2>${this.title}</h2>
-            <p>${this.description}</p>
+            <p>${
+                this.description.length > 100
+                    ? this.description.substring(0, 100) + '...'
+                    : this.description
+            }</p>
         </article>
         `;
     }
