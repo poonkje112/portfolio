@@ -2,6 +2,7 @@ import { LitElement, html, css } from 'lit';
 import { customElement } from 'lit/decorators.js'
 import { ProjectService } from '@/services/ProjectService';
 import { Project } from '@/model/Project';
+import { Service } from '@/services/Service';
 
 @customElement('project-component')
 export class ProjectComponent extends LitElement {
@@ -35,6 +36,10 @@ export class ProjectComponent extends LitElement {
     private projects: Project[] = [];
 
     public async firstUpdated() {
+        if(!await Service.isServiceAvailable()) {
+            this.shadowRoot?.querySelector('div')?.appendChild(document.createElement('unavailable-component'));
+        }
+
         const projectService = new ProjectService();
         const projects = await projectService.getProjects();
         this.projects = projects;
